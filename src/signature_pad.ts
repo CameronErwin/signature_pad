@@ -146,6 +146,7 @@ export default class SignaturePad {
   public toDataURL(type = 'image/png', encoderOptions?: number) {
     switch (type) {
       case 'image/svg+xml':
+        console.log('?');
         return this._toSVG();
       default:
         return this.canvas.toDataURL(type, encoderOptions);
