@@ -146,7 +146,6 @@ export default class SignaturePad {
   public toDataURL(type = 'image/png', encoderOptions?: number) {
     switch (type) {
       case 'image/svg+xml':
-        console.log('ah');
         return this._toSVG();
       default:
         return this.canvas.toDataURL(type, encoderOptions);
@@ -565,12 +564,10 @@ export default class SignaturePad {
       ' xmlns="http://www.w3.org/2000/svg"' +
       ' xmlns:xlink="http://www.w3.org/1999/xlink"' +
       ` viewBox="${minX} ${minY} ${this.canvas.width} ${this.canvas.height}"` +
-      ` width="${maxX}"` +
-      ` height="${maxY}"` +
+      ` width="${this.canvas.width}"` +
+      ` height="${this.canvas.height}"` +
       '>';
     let body = svg.innerHTML;
-    
-    console.log(header);
 
     // IE hack for missing innerHTML property on SVGElement
     if (body === undefined) {
