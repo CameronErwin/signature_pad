@@ -568,6 +568,8 @@ export default class SignaturePad {
       ` height="${maxY}"` +
       '>';
     let body = svg.innerHTML;
+    
+    console.log(header);
 
     // IE hack for missing innerHTML property on SVGElement
     if (body === undefined) {
