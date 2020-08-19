@@ -464,9 +464,9 @@ class SignaturePad {
         const header = '<svg'
             + ' xmlns="http://www.w3.org/2000/svg"'
             + ' xmlns:xlink="http://www.w3.org/1999/xlink"'
-            + ` viewBox="${minX} ${minY} ${maxX} ${maxY}"`
-            + ` width="${maxX}"`
-            + ` height="${maxY}"`
+            + ` viewBox="${minX} ${minY} ${this.canvas.width} ${this.canvas.height}"`
+            + ` width="${this.canvas.width}"`
+            + ` height="${this.canvas.height}"`
             + '>';
         let body = svg.innerHTML;
         if (body === undefined) {
